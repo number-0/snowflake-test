@@ -41,10 +41,10 @@ public class SnowFlake {
 
     public SnowFlake(long datacenterId, long machineId) {
         if (datacenterId > MAX_DATACENTER_NUM || datacenterId < 0) {
-            throw new IllegalArgumentException("datacenterId can't be greater than MAX_DATACENTER_NUM or less than 0");
+            throw new IllegalArgumentException("datacenterId can't be greater than " + MAX_DATACENTER_NUM + " or less than 0");
         }
         if (machineId > MAX_MACHINE_NUM || machineId < 0) {
-            throw new IllegalArgumentException("machineId can't be greater than MAX_MACHINE_NUM or less than 0");
+            throw new IllegalArgumentException("machineId can't be greater than " + MAX_MACHINE_NUM + " or less than 0");
         }
         this.datacenterId = datacenterId;
         this.machineId = machineId;
@@ -97,7 +97,7 @@ public class SnowFlake {
     }
 
     public static void main(String[] args) {
-        SnowFlake snowFlake = new SnowFlake(2, 3);
+        SnowFlake snowFlake = new SnowFlake(255, 255);
 
         for (int i = 0; i < (1 << 12); i++) {
             System.out.println(snowFlake.nextId());
