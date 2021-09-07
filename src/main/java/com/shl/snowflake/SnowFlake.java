@@ -59,7 +59,7 @@ public class SnowFlake {
         long currStmp = getNewstmp();
         //出现时钟回拨，抛异常
         if (currStmp < lastStmp) {
-            throw new RuntimeException("Clock moved backwards.  Refusing to generate id");
+            throw new RuntimeException("clock moved backwards, refusing to generate id.");
         }
 
         if (currStmp == lastStmp) {
