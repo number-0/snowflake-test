@@ -97,7 +97,7 @@ public class SnowFlake2 {
     }
 
     public static void main(String[] args) {
-        SnowFlake2 snowFlake = new SnowFlake2(1023);
+        SnowFlake2 snowFlake = new SnowFlake2(255);
 
         for (int i = 0; i < (1 << 12); i++) {
             System.out.println(snowFlake.nextId());
