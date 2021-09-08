@@ -73,7 +73,8 @@ public class SnowFlake2 {
             }
         } else {
             //不同毫秒内，序列号置为0
-            sequence = 0L;
+//            sequence = 0L;
+            sequence = (int)(Math.random() * 10);
         }
 
         lastStmp = currStmp;
